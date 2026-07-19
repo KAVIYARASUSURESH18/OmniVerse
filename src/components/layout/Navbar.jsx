@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { Menu, Moon, Search, User } from "lucide-react";
+import ThemeToggle from "../common/ThemeToggle";
 
 const Navbar = ({ toggleSidebar, toggleTheme }) => {
   return (
@@ -109,9 +110,10 @@ const Navbar = ({ toggleSidebar, toggleTheme }) => {
           </button>
 
         </div>
-
+        <ThemeToggle/>
       </div>
     </header>
+    
   );
 };
 
