@@ -39,4 +39,22 @@ onPageChange={setPage}
 
 
 export default Movies;
+import Error from "../components/common/Error";
+
+
+if(error){
+
+return (
+
+<Error
+
+message="Failed to load movies"
+
+onRetry={fetchMovies}
+
+/>
+
+)
+
+}
 
