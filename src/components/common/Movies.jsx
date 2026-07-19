@@ -1,31 +1,42 @@
-import Loader from "../components/common/Loader";
+import { useState } from "react";
+
+import Pagination from "../components/common/Pagination";
 
 
 function Movies(){
 
-const loading = true;
+
+const [page,setPage] = useState(1);
+
 
 
 return (
 
 <>
 
-{
-loading ?
 
-<Loader/>
+<MovieGrid page={page}/>
 
-:
 
-<MovieGrid/>
 
-}
+<Pagination
+
+currentPage={page}
+
+totalPages={10}
+
+onPageChange={setPage}
+
+/>
+
 
 </>
 
 )
 
+
 }
 
 
 export default Movies;
+
