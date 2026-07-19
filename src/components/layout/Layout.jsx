@@ -2,6 +2,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import MobileMenu from "./MobileMenu";
 import Footer from "./Footer";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 
 
