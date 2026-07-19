@@ -137,3 +137,25 @@ const SearchBar = () => {
 
 
 export default SearchBar;
+import EmptyState from "../components/common/EmptyState";
+
+
+if(results.length === 0){
+
+return (
+
+<EmptyState
+
+title="No Results Found"
+
+message="Try searching another movie, anime or game."
+
+buttonText="Go Home"
+
+onButtonClick={()=>navigate("/")}
+
+/>
+
+)
+
+}
