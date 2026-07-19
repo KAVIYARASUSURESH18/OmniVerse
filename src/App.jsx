@@ -81,7 +81,28 @@ function App() {
 
 
     </Routes>
-    <BackToTop />
+  
+    function Layout({children}){
+
+return (
+
+<>
+
+<Navbar/>
+
+{children}
+
+<Footer/>
+
+<BackToTop/>
+
+</>
+
+)
+
+}
+
+export default Layout;
 
   );
 
