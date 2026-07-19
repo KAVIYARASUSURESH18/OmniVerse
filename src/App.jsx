@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 
 import ProtectedRoute from "./components/common/ProtectedRoute";
+import BackToTop from "./components/common/BackToTop";
 
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
 
 
     </Routes>
+    <BackToTop />
 
   );
 
