@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import BackToTop from "./components/common/BackToTop";
+import MovieDetails from "./components/movies/MovieDetails";
 
 
 function App() {
