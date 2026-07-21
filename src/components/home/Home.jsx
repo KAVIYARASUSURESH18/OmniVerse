@@ -58,6 +58,32 @@ function Home() {
 
   );
 
+import Hero from "../components/home/Hero";
+import CategoryGrid from "../components/home/CategoryGrid";
+import TrendingSection from "../components/home/TrendingSection";
+
+
+function Home() {
+
+  return (
+
+    <main>
+
+      <Hero />
+
+      <CategoryGrid />
+
+      <TrendingSection />
+
+    </main>
+
+  );
+
+}
+
+
+export default Home;
+  
 }
 
 
