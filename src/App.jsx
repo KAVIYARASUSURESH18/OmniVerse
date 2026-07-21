@@ -12,6 +12,8 @@ import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/common/ProtectedRoute";
 import BackToTop from "./components/common/BackToTop";
 import MovieDetails from "./components/movies/MovieDetails";
+import AnimeDetails from "./components/anime/AnimeDetails";
+
 
 
 function App() {
@@ -103,11 +105,18 @@ return (
 
 }
 
+<Route
+  path="/anime/:id"
+  element={<AnimeDetails />}
+/>
+
+  
 export default Layout;
 
   );
 
 }
+
 
 
 export default App;
