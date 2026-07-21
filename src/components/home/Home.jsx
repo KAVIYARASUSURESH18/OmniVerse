@@ -40,4 +40,25 @@ function Home() {
 }
 
 
+export default Home;import Hero from "../components/home/Hero";
+import CategoryGrid from "../components/home/CategoryGrid";
+
+
+function Home() {
+
+  return (
+
+    <main>
+
+      <Hero />
+
+      <CategoryGrid />
+
+    </main>
+
+  );
+
+}
+
+
 export default Home;
