@@ -116,3 +116,34 @@ function Home() {
 
 
 export default Home;
+import Hero from "../components/home/Hero";
+import CategoryGrid from "../components/home/CategoryGrid";
+import TrendingSection from "../components/home/TrendingSection";
+import FeaturedSection from "../components/home/FeaturedSection";
+import StatsSection from "../components/home/StatsSection";
+
+
+function Home() {
+
+  return (
+
+    <main>
+
+      <Hero />
+
+      <CategoryGrid />
+
+      <TrendingSection />
+
+      <FeaturedSection />
+
+      <StatsSection />
+
+    </main>
+
+  );
+
+}
+
+
+export default Home;
