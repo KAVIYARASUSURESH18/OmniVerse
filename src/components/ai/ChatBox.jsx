@@ -101,6 +101,16 @@ const ChatBox = () => {
 
 
 
+  {messages.map((item) => (
+
+  <MessageBubble
+    key={item.id}
+    role={item.role}
+    content={item.content}
+  />
+
+))}
+
   // Handle Keyboard
 
   const handleKeyDown = (event) => {
