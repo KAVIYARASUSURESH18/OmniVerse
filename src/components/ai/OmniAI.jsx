@@ -7,6 +7,66 @@ import {
 
 import ChatBox from "./ChatBox";
 import PromptCard from "./PromptCard";
+import ChatHistory
+  from "./ChatHistory";
+
+
+const chats = [
+
+  {
+    id: 1,
+    title: "Data Structures Doubts",
+    date: "Today",
+  },
+
+  {
+    id: 2,
+    title: "Java Programming Help",
+    date: "Yesterday",
+  },
+
+  {
+    id: 3,
+    title: "Exam Preparation",
+    date: "2 days ago",
+  },
+
+];
+
+
+<ChatHistory
+
+  chats={chats}
+
+  activeChatId={1}
+
+  onSelectChat={(id) => {
+
+    console.log(
+      "Selected chat:",
+      id
+    );
+
+  }}
+
+  onNewChat={() => {
+
+    console.log(
+      "Create new chat"
+    );
+
+  }}
+
+  onDeleteChat={(id) => {
+
+    console.log(
+      "Delete chat:",
+      id
+    );
+
+  }}
+
+/>
 const prompts = [
 
   {
