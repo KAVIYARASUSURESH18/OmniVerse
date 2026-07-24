@@ -15,7 +15,8 @@ import MovieDetails from "./components/movies/MovieDetails";
 import AnimeDetails from "./components/anime/AnimeDetails";
 
 import GameDetails from "./components/games/GameDetails";
-
+import SubjectDetails
+  from "./components/engineering/SubjectDetails";
 
 function App() {
 
@@ -85,6 +86,10 @@ function App() {
 
 
     </Routes>
+    <Route
+  path="/engineering/subject/:id"
+  element={<SubjectDetails />}
+/>
   
     function Layout({children}){
 
