@@ -135,6 +135,13 @@ export default Layout;
   element={<GameDetails />}
 />
 }
+<Route
+  path="/forgot-password"
+  element={<ForgotPassword />}
+/>
+
+
+
 
 
 
