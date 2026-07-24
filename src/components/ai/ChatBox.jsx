@@ -10,7 +10,7 @@ import {
 
 import MessageBubble from "./MessageBubble";
 import MessageBubble from "./MessageBubble";
-
+import MessageBubble from "./MessageBubble";
 
 const ChatBox = () => {
 
