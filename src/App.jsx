@@ -21,6 +21,8 @@ import SubjectDetails
 import OmniAIPage
   from "./components/ai/OmniAIPage";
 import Register from "./components/auth/Register";
+import ForgotPassword
+  from "./components/auth/ForgotPasswordForm";
 
 
 
