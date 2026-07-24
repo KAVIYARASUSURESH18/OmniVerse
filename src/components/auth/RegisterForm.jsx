@@ -20,6 +20,8 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import SocialLogin
+  from "./SocialLogin";
 
 const RegisterForm = () => {
 
