@@ -14,6 +14,7 @@ import BackToTop from "./components/common/BackToTop";
 import MovieDetails from "./components/movies/MovieDetails";
 import AnimeDetails from "./components/anime/AnimeDetails";
 
+import GameDetails from "./components/games/GameDetails";
 
 
 function App() {
@@ -115,6 +116,11 @@ export default Layout;
 
   );
 
+
+  <Route
+  path="/games/:id"
+  element={<GameDetails />}
+/>
 }
 
 
