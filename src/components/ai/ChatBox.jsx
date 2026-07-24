@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 import MessageBubble from "./MessageBubble";
+import MessageBubble from "./MessageBubble";
 
 
 const ChatBox = () => {
