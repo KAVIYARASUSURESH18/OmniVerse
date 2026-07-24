@@ -18,6 +18,11 @@ import GameDetails from "./components/games/GameDetails";
 import SubjectDetails
   from "./components/engineering/SubjectDetails";
 
+import OmniAIPage
+  from "./components/ai/OmniAIPage";
+
+
+
 function App() {
 
 
