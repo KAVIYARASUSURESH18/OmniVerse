@@ -18,6 +18,8 @@ import { Link, useNavigate } from "react-router-dom";
 const LoginForm = () => {
 
   const navigate = useNavigate();
+  import SocialLogin
+  from "./SocialLogin";
 
 
   // Form State
