@@ -20,6 +20,7 @@ import SubjectDetails
 
 import OmniAIPage
   from "./components/ai/OmniAIPage";
+import Register from "./components/auth/Register";
 
 
 
