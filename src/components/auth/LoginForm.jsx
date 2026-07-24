@@ -752,9 +752,9 @@ const LoginForm = () => {
             text-gray-600
           "
         >
-          <Link to="/forgot-password">
-  Forgot Password?
-</Link>
+           <Link to="/forgot-password">
+           Forgot Password?
+           </Link>
 
           🌐 Movies • Anime • Games • Engineering • AI
 
