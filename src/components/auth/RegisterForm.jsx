@@ -975,6 +975,7 @@ const RegisterForm = () => {
               </span>
 
             </label>
+            <SocialLogin />
 
 
 
