@@ -7,6 +7,41 @@ import {
 
 import ChatBox from "./ChatBox";
 import PromptCard from "./PromptCard";
+const prompts = [
+
+  {
+    id: 1,
+    icon: "📚",
+    title: "Study Assistant",
+    prompt:
+      "Explain Data Structures in simple terms.",
+  },
+
+  {
+    id: 2,
+    icon: "💻",
+    title: "Code Helper",
+    prompt:
+      "Help me debug my Java program.",
+  },
+
+  {
+    id: 3,
+    icon: "📝",
+    title: "Exam Preparation",
+    prompt:
+      "Give me important questions for my exam.",
+  },
+
+  {
+    id: 4,
+    icon: "💡",
+    title: "Ask Anything",
+    prompt:
+      "Explain a difficult topic to me.",
+  },
+
+];
 
 
 const OmniAI = () => {
