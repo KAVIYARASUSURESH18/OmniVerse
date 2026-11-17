@@ -1,148 +1,56 @@
-import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { Link, NavLink, Route, Routes, useParams } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Movies from "./pages/Movies";
-import Anime from "./pages/Anime";
-import Games from "./pages/Games";
-import Engineering from "./pages/Engineering";
-
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-
-import ProtectedRoute from "./components/common/ProtectedRoute";
-import BackToTop from "./components/common/BackToTop";
-import MovieDetails from "./components/movies/MovieDetails";
-import AnimeDetails from "./components/anime/AnimeDetails";
-
-import GameDetails from "./components/games/GameDetails";
-import SubjectDetails
-  from "./components/engineering/SubjectDetails";
-
-import OmniAIPage
-  from "./components/ai/OmniAIPage";
-import Register from "./components/auth/Register";
-import ForgotPassword
-  from "./components/auth/ForgotPasswordForm";
-
-
-
-function App() {
-
-
-  return (
-
-    <Routes>
-
-
-      {/* Public Pages */}
-
-      <Route
-        path="/"
-        element={<Home />}
-      />
-
-
-      <Route
-        path="/movies"
-        element={<Movies />}
-      />
-
-
-      <Route
-        path="/anime"
-        element={<Anime />}
-      />
-
-
-      <Route
-        path="/games"
-        element={<Games />}
-      />
-
-
-      <Route
-        path="/engineering"
-        element={<Engineering />}
-      />
-
-
-      <Route
-        path="/login"
-        element={<Login />}
-      />
-
-
-
-      {/* Protected Pages */}
-
-
-      <Route
-
-        path="/profile"
-
-        element={
-
-          <ProtectedRoute>
-
-            <Profile />
-
-          </ProtectedRoute>
-
-        }
-
-      />
-
-
-    </Routes>
-    <Route
-  path="/engineering/subject/:id"
-  element={<SubjectDetails />}
-/>
-  
-    function Layout({children}){
-
-return (
-
-<>
-
-<Navbar/>
-
-{children}
-
-<Footer/>
-
-<BackToTop/>
-
-</>
-
-)
-
-}
-
-<Route
-  path="/anime/:id"
-  element={<AnimeDetails />}
-/>
-
-  
-export default Layout;
-
-  );
-
-
-  <Route
-  path="/games/:id"
-  element={<GameDetails />}
-/>
-}
-<Route
-  path="/forgot-password"
-  element={<ForgotPassword />}
-/>
-
-
-
-
-
-
-export default App;
+const catalog = {
+  movies: [
+    ["Interstellar","Sci-Fi","2014","8.7","🚀","A journey beyond the stars, time and human limits."],
+    ["Inception","Thriller","2010","8.8","🌀","A mind-bending story inside layered dreams."],
+    ["Vikram","Action","2022","8.3","⚡","A high-stakes action thriller from Tamil cinema."],
+    ["Leo","Action","2023","7.2","🦁","A quiet life meets a dangerous past."],
+    ["Your Name","Animation","2016","8.4","☄️","Two lives connect across distance and time."],
+    ["The Batman","Crime","2022","7.8","🦇","A detective story set in a shadowy city."]
+  ],
+  anime: [
+    ["One Piece","Adventure","1999","9.0","🏴‍☠️","A crew sails toward the greatest treasure."],
+    ["Naruto","Action","2002","8.4","🍃","A young ninja works toward his dream."],
+    ["Demon Slayer","Action","2019","8.6","⚔️","A determined swordsman protects his family."],
+    ["Death Note","Mystery","2006","8.9","📓","A tense battle of strategy and morality."],
+    ["Jujutsu Kaisen","Fantasy","2020","8.5","👁️","Students face supernatural challenges."],
+    ["Haikyuu!!","Sports","2014","8.7","🏐","A team grows through volleyball."]
+  ],
+  games: [
+    ["Minecraft","Sandbox","2011","9.0","⛏️","Build, explore and create your own world."],
+    ["Valorant","Tactical","2020","8.2","🎯","A team-based tactical action game."],
+    ["Forza Horizon 5","Racing","2021","8.8","🏎️","Explore an open-world festival of driving."],
+    ["eFootball","Sports","2024","7.8","⚽","Build a squad and enjoy the beautiful game."],
+    ["Grand Theft Auto V","Adventure","2013","9.0","🌆","An open-world action adventure."],
+    ["Rocket League","Sports","2015","8.5","🚗","Football with rocket-powered cars."]
+  ]
+};
+const worlds = [
+  {name:"Movies",path:"/movies",icon:"🎬",desc:"Discover films worth watching",tone:"cyan"},
+  {name:"Anime",path:"/anime",icon:"🎌",desc:"Find your next anime adventure",tone:"purple"},
+  {name:"Games",path:"/games",icon:"🎮",desc:"Explore games across platforms",tone:"green"},
+  {name:"Engineering Hub",path:"/engineering",icon:"📚",desc:"Study resources in one place",tone:"orange"},
+  {name:"Omni AI",path:"/ai",icon:"✦",desc:"A space for ideas and learning",tone:"pink"}
+];
+const subjects = [
+  ["Data Structures","23CS201","Trees, graphs, linked lists and algorithms","💻"],
+  ["Object Oriented Programming","23CS202","Java, classes, objects and design","☕"],
+  ["Database Management Systems","23CS203","SQL, relational models and database design","🗄️"],
+  ["Operating Systems","23CS204","Processes, memory and file systems","⚙️"],
+  ["Computer Networks","23CS205","Protocols, routing and network layers","🌐"],
+  ["Software Engineering","23CS206","Requirements, design and testing","🧩"]
+];
+function Header(){const [open,setOpen]=useState(false);return <header className="header"><div className="nav container"><Link to="/" className="brand" onClick={()=>setOpen(false)}><span className="brand-icon">O</span><span><b>OmniVerse</b><small>LEARN · WATCH · PLAY</small></span></Link><button className="mobile-menu" onClick={()=>setOpen(!open)} aria-label="Toggle menu">☰</button><nav className={open?"nav-links show":"nav-links"}>{[["Home","/"],["Movies","/movies"],["Anime","/anime"],["Games","/games"],["Engineering","/engineering"],["Omni AI","/ai"]].map(([n,p])=><NavLink key={p} to={p} end={p==="/"} onClick={()=>setOpen(false)}>{n}</NavLink>)}</nav><Link to="/login" className="nav-login">Sign in ↗</Link></div></header>}
+function Footer(){return <footer className="footer"><div className="container footer-row"><div><Link to="/" className="brand"><span className="brand-icon">O</span><span><b>OmniVerse</b><small>ONE UNIVERSE. MANY POSSIBILITIES.</small></span></Link><p>Learn, watch, play and explore — all in one place.</p></div><div className="footer-nav">{worlds.map(w=><Link key={w.path} to={w.path}>{w.name}</Link>)}</div></div><div className="copyright">© {new Date().getFullYear()} OmniVerse. Built to explore.</div></footer>}
+function Heading({tag,title,desc}){return <div className="section-heading"><span className="eyebrow">{tag}</span><h2>{title}</h2>{desc&&<p>{desc}</p>}</div>}
+function Home(){return <><section className="hero"><div className="hero-orb orb-a"></div><div className="hero-orb orb-b"></div><div className="container hero-layout"><div className="hero-copy"><span className="eyebrow"><i/> YOUR DIGITAL UNIVERSE</span><h1>Everything you love.<br/><em>One universe.</em></h1><p>Discover movies, dive into anime, explore games and level up your engineering journey — all from one place.</p><div className="hero-buttons"><Link to="/explore" className="button primary">Explore OmniVerse <b>→</b></Link><Link to="/engineering" className="button secondary">Explore learning</Link></div><div className="hero-note"><b>05</b> worlds to explore <span>·</span> Made for curious minds</div></div><div className="hero-visual"><div className="orbit orbit-a"></div><div className="orbit orbit-b"></div><div className="planet">O<span>✦</span></div><div className="floating-chip chip-top">✦ &nbsp;Discover more</div><div className="floating-chip chip-bottom">∞ &nbsp;Many possibilities</div></div></div></section><section className="container section"><Heading tag="PICK YOUR WORLD" title="Explore the universe" desc="Jump into the things you enjoy."/><div className="world-grid">{worlds.map((w,i)=><Link to={w.path} key={w.path} className={"world-card "+w.tone}><div className="world-card-top"><span>{w.icon}</span><b>↗</b></div><h3>{w.name}</h3><p>{w.desc}</p><small>Explore <b>→</b></small></Link>)}</div></section><section className="container section"><Heading tag="CURATED FOR YOU" title="Popular picks" desc="A few places to start your next adventure."/><div className="popular-grid">{[["Interstellar","Movie","🚀","/movies"],["One Piece","Anime","🏴‍☠️","/anime"],["Minecraft","Game","⛏️","/games"]].map(x=><Link to={x[3]} className="popular-card" key={x[0]}><div>{x[2]}</div><section><small>{x[1]} SPOTLIGHT</small><h3>{x[0]}</h3><span>Explore ↗</span></section></Link>)}</div></section><section className="container callout"><div><span className="eyebrow">FOR EVERY CURIOUS MIND</span><h2>Your next idea starts here.</h2><p>Explore learning resources and make room for something new.</p></div><Link to="/engineering" className="button primary">Open Engineering Hub →</Link></section></>}
+function Catalog({kind}){const [q,setQ]=useState("");const [filter,setFilter]=useState("All");const rows=catalog[kind];const filters=["All",...new Set(rows.map(x=>x[1]))];const found=rows.filter(x=>x[0].toLowerCase().includes(q.toLowerCase())&&(filter==="All"||x[1]===filter));const title=kind[0].toUpperCase()+kind.slice(1);return <main className="container inner"><div className="page-intro"><span className="eyebrow">OMNIVERSE LIBRARY</span><h1>Explore {title}</h1><p>Find something new to enjoy. Search the collection or filter by category.</p></div><div className="catalog-tools"><input aria-label="Search titles" value={q} onChange={e=>setQ(e.target.value)} placeholder={"⌕  Search "+title.toLowerCase()+"..."}/><select aria-label="Filter category" value={filter} onChange={e=>setFilter(e.target.value)}>{filters.map(x=><option key={x}>{x}</option>)}</select></div><div className="catalog-grid">{found.map(x=><article className="catalog-card" key={x[0]}><div className={"catalog-art "+kind}><span>{x[4]}</span><small>{x[1]}</small></div><div className="catalog-title"><div><h3>{x[0]}</h3><p>{x[2]} · {x[1]}</p></div><b>★ {x[3]}</b></div><p className="catalog-desc">{x[5]}</p></article>)}</div>{!found.length&&<div className="empty">No results found. Try another search.</div>}</main>}
+function Engineering(){return <main className="container inner"><div className="page-intro"><span className="eyebrow">LEARN · BUILD · GROW</span><h1>Engineering Hub</h1><p>A growing space for engineering notes, subject guides and study resources.</p></div><div className="study-banner"><span className="eyebrow">YOUR LEARNING SPACE</span><h2>Build strong foundations.</h2><p>Choose a subject to explore its key topics and learning path.</p></div><Heading tag="COMPUTER SCIENCE" title="Explore subjects" desc="A starter collection of core CSE subjects."/><div className="subject-grid">{subjects.map(s=><article className="subject-card" key={s[1]}><span className="subject-icon">{s[3]}</span><small>{s[1]}</small><h3>{s[0]}</h3><p>{s[2]}</p><span className="subject-more">Study guide ↗</span></article>)}</div></main>}
+function OmniAI(){const [q,setQ]=useState("");const [messages,setMessages]=useState([{role:"assistant",text:"Hi! I'm the OmniVerse assistant interface. Ask about the platform, study planning or ideas. This preview uses sample responses and is not connected to a live AI service yet."}]);function send(e){e.preventDefault();if(!q.trim())return;setMessages(m=>[...m,{role:"user",text:q},{role:"assistant",text:"Thanks for your message! The Omni AI interface is ready for its next integration step. Connect an AI provider securely on the server before enabling live answers."}]);setQ("");}return <main className="container inner"><div className="page-intro"><span className="eyebrow">✦ OMNIVERSE INTELLIGENCE</span><h1>Meet Omni AI</h1><p>A focused space for questions, learning and brainstorming.</p></div><div className="chat-panel"><div className="chat-head"><span className="brand-icon">✦</span><div><b>Omni AI</b><small>● Interface preview</small></div><span className="demo-label">DEMO</span></div><div className="chat-messages">{messages.map((m,i)=><div className={"message "+m.role} key={i}><b>{m.role==="assistant"?"✦ Omni AI":"You"}</b><p>{m.text}</p></div>)}</div><form className="chat-form" onSubmit={send}><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Ask something..."/><button className="button primary">Send ↑</button></form><small className="muted">Preview only · No live AI connection or personal data storage</small></div></main>}
+function Explore(){return <main className="container inner"><div className="page-intro"><span className="eyebrow">FIND YOUR NEXT ADVENTURE</span><h1>Explore OmniVerse</h1><p>Choose a world to get started.</p></div><div className="world-grid">{worlds.map(w=><Link to={w.path} key={w.path} className={"world-card "+w.tone}><div className="world-card-top"><span>{w.icon}</span><b>↗</b></div><h3>{w.name}</h3><p>{w.desc}</p><small>Explore →</small></Link>)}</div></main>}
+function Auth({register=false}){const [email,setEmail]=useState("");const [password,setPassword]=useState("");const [notice,setNotice]=useState("");return <main className="container inner auth-wrap"><form className="auth-card" onSubmit={e=>{e.preventDefault();setNotice("Authentication is not connected yet. Your details were not sent or saved.");}}><span className="brand-icon">O</span><span className="eyebrow">{register?"JOIN THE UNIVERSE":"WELCOME BACK"}</span><h1>{register?"Create your account":"Sign in"}</h1><p>{register?"Create an account when authentication is enabled.":"Sign in to your OmniVerse account."}</p>{register&&<label>Your name<input required placeholder="Enter your name"/></label>}<label>Email address<input type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@example.com"/></label><label>Password<input type="password" required value={password} onChange={e=>setPassword(e.target.value)} placeholder="Enter password"/></label><button className="button primary full">{register?"Create account":"Sign in"} →</button>{notice&&<p className="form-notice">{notice}</p>}<p className="auth-switch">{register?"Already have an account? ":"New to OmniVerse? "}<Link to={register?"/login":"/register"}>{register?"Sign in":"Create account"}</Link></p><Link className="forgot-link" to="/forgot-password">Forgot password?</Link></form></main>}
+function Forgot(){const [email,setEmail]=useState("");return <main className="container inner auth-wrap"><form className="auth-card" onSubmit={e=>{e.preventDefault();alert("Password reset is not enabled until authentication is connected.");}}><span className="eyebrow">ACCOUNT SUPPORT</span><h1>Reset password</h1><p>Enter your email address to continue when account services are enabled.</p><label>Email address<input type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@example.com"/></label><button className="button primary full">Continue →</button><Link className="forgot-link" to="/login">← Back to sign in</Link></form></main>}
+function NotFound(){return <main className="container inner not-found"><span>404</span><h1>This world hasn't been found.</h1><p>The page may have moved or the link may be incorrect.</p><Link to="/" className="button primary">Back to home →</Link></main>}
+export default function App(){return <><Header/><Routes><Route path="/" element={<Home/>}/><Route path="/explore" element={<Explore/>}/><Route path="/movies" element={<Catalog kind="movies"/>}/><Route path="/anime" element={<Catalog kind="anime"/>}/><Route path="/games" element={<Catalog kind="games"/>}/><Route path="/engineering/*" element={<Engineering/>}/><Route path="/ai" element={<OmniAI/>}/><Route path="/search" element={<Explore/>}/><Route path="/login" element={<Auth/>}/><Route path="/register" element={<Auth register/>}/><Route path="/forgot-password" element={<Forgot/>}/><Route path="*" element={<NotFound/>}/></Routes><Footer/></>}
