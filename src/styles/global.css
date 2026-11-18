@@ -25,3 +25,23 @@
 @media(max-width:680px){.vision-grid{display:flex;flex-direction:column;align-items:stretch;gap:30px;padding-block:48px 35px}.vision-copy{padding:0}.vision-wordmark{font-size:43px;margin:20px 0}.vision-subtitle{font-size:42px}.vision-features{margin-top:30px}.vision-features div{grid-template-columns:23px 1fr;padding-inline:7px}.vision-features span{font-size:16px}.vision-features b{font-size:7px}.vision-features small{font-size:6px}.vision-art{height:350px}.vision-portal{transform:translate(-50%,-50%) scale(.78)}.vision-halo{transform:translate(-50%,-50%) scale(.8)}.label-one{top:15%;right:4%}.label-two{bottom:17%;left:4%}.vision-showcase{padding-top:52px}.showcase-grid{grid-template-columns:1fr}.anime-feature-art,.game-dashboard{height:230px}.game-feature{height:135px}.game-feature:after{height:95px}.panel-bottom{font-size:7px}.vision-worlds{padding-top:55px}}
 
 @media(max-width:680px){.brand-logo{width:184px;max-height:46px}.footer-logo{width:230px;max-height:58px}}
+
+
+/* Supabase auth and administrator dashboard */
+.nav-login{cursor:pointer;color:#eaf5ff;background:transparent}
+.auth-card label,.admin-form label{display:flex;flex-direction:column;gap:8px;color:#b7c3d7;font-size:12px;margin:15px 0}
+.auth-card input,.admin-form input,.admin-form select,.admin-form textarea{width:100%;background:#111b2c;border:1px solid #2b3951;border-radius:10px;padding:13px 15px;color:#eef2ff;outline:none}
+.admin-form textarea{min-height:100px;resize:vertical}
+.auth-card input:focus,.admin-form input:focus,.admin-form select:focus,.admin-form textarea:focus{border-color:#42cde1}
+.admin-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+.admin-stats>div,.admin-form,.admin-list{border:1px solid #ffffff16;border-radius:15px;background:#101a2a;padding:20px}
+.admin-stats b{display:block;font:700 27px 'Space Grotesk';color:#53d9ed}
+.admin-stats span,.admin-item small{display:block;color:#8e9bb0;font-size:11px;margin-top:5px}
+.admin-form h2,.admin-list h2{font:600 21px 'Space Grotesk';margin:0 0 16px}
+.admin-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.admin-item{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:14px 0;border-top:1px solid #ffffff12}
+.admin-delete{border:1px solid #713b4a;background:#301a27;color:#ffb5c4;border-radius:8px;padding:8px 12px;cursor:pointer}
+.admin-list{margin-top:22px}
+.form-notice{color:#75d9e9;font-size:12px;line-height:1.6;margin:14px 0}
+.button:disabled{opacity:.6;cursor:wait;transform:none}
+@media(max-width:700px){.admin-stats{grid-template-columns:1fr}.admin-fields{grid-template-columns:1fr}.admin-form,.admin-list{padding:16px}}
